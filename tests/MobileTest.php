@@ -16,8 +16,8 @@ class MobileTest extends TestCase
 
 		$this->assertNull($mobile->makeCallByName(''));
 
-		/*$name = 'Fidel';
-		$this->assertEquals('Fidel',$mobile->makeCallByName($name));*/
+		$name = 'Fidel';
+		$this->assertEquals('Fidel',$mobile->makeCallByName($name));
 	}
 
 }
