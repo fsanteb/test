@@ -1,20 +1,29 @@
-Chicho challenge
+FIDEL SANTE
 ================
+# bingo-kata
 
-#### Use
-1. Fork this repository
-1. Run `composer install`
-1. Run `php ./vendor/phpunit/phpunit/phpunit` (requires php >= 7.3 if you use other version please update composer.json file first)
 
-#### Tasks
+Bingo game kata in PHP7.2
 
-- Fix any errors and add the necessary to make the test work and commit it
-- Add a test for the method makeCallByName passing a valid contact, mock up any hard dependency and add the right assertions
-- Add the necessary code in the production code to check when the contact is not found and add another test to test that case
-- Add your own logic to send a SMS given a number and the body, the method should validate the number using the validateNumber method from ContactService and using the provider property’s methods
-- When writing the tests you should mock every method from ContactService
+###Installation guide:
+If you have PHP7.2 just run `composer install` and
+`php main.php us 1 75 5 5 200`.
 
-#### Bonus
-- Can you add support for two mobile carriers? How would you accomplish that?
-- Create a new integration with an external service like Twilio to send and track an SMS.
-- Create Unit Tests for this integration using a mock web server or similar.
+Parameters explained:
+- `us` -> Bingo mode, right now is the only one implemented.
+- `1` -> Minimum range for the card.
+- `75` -> Maximum range for the card.
+- `5` -> rows for the card.
+- `5` -> columns for the card.
+- `200` -> number of players.
+
+Right now all those parameters are passed to `main.php` script but ideally they should
+be read from a config file which will contain the rules of the US Bingo, also some more
+in depth validation is missing in the config ie: Throwing proper errors when strings are passed
+instead of int.
+
+In case you want to use docker, there are a couple of commands in the Makefile:
+- `make start-docker`
+- `make composer-install`
+- `make run-game-us`
+- `make run-tests`
